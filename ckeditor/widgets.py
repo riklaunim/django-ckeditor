@@ -66,6 +66,8 @@ class CKEditorWidget(forms.Textarea):
                                 setting must be a dictionary type.' % \
                                 config_name)
                     # Override defaults with settings config.
+                    if 'customConfig' in config:
+                        self.config = {}
                     self.config.update(config)
                 else:
                     raise ImproperlyConfigured("No configuration named '%s' \
